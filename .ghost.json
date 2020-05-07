@@ -1,0 +1,12 @@
+{
+  "development": {
+    "apiUrl": "https://musarte-blog.herokuapp.com",
+    "contentApiKey": "f31d5dd28d9e745ce66fc4bc2b",
+    "version": "v3"
+  },
+  "production": {
+    "apiUrl": "https://musarte-blog.herokuapp.com",
+    "contentApiKey": "f31d5dd28d9e745ce66fc4bc2b",
+    "version": "v3"
+  }
+}
