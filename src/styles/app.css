@@ -22,9 +22,9 @@ what's here to work the way you'd like it to.
 :root {
 
     /* Colours */
-    --color-primary: #3eb0ef;
-    --color-base: #15171A;
-    --color-secondary: #5B7A81;
+    --color-primary: #811796;
+    --color-base: #fff;
+    --color-secondary: rgb(96, 169, 186);
     --color-border: #c7d5d8;
     --color-bg: #f5f5f5;
 
@@ -171,10 +171,13 @@ html {
 }
 a {
     background-color: transparent;
+    text-decoration: none;
+    color: var(--color-primary);
 }
 a:active,
 a:hover {
     outline: 0;
+    text-decoration: none;
 }
 b,
 strong {
@@ -443,12 +446,12 @@ blockquote cite a {
 }
 
 a {
-    color: #26a8ed;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 h1,
@@ -472,6 +475,9 @@ h1 {
 @media (max-width: 500px) {
     h1 {
         font-size: 2rem;
+    }
+    .site-desc {
+        display: none;
     }
 }
 
@@ -542,6 +548,16 @@ h6 {
     font-family: var(--font-serif);
 }
 
+.content-footer {
+    background-color: rgb(247, 246, 246);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+
 .post-full-content {
     max-width: 720px;
     margin: 0 auto;
@@ -578,6 +594,8 @@ h6 {
 .content-title {
     margin: 0 0 0.8em;
     font-size: 5rem;
+    color: #999;
+    font-weight: bold;
 }
 @media (max-width: 500px) {
     .content-title {
@@ -654,7 +672,7 @@ h6 {
     white-space: pre-wrap;
     padding: 20px;
     background: var(--color-base);
-    color: #fff;
+    color: #999;
     border-radius: 12px;
 }
 
@@ -664,7 +682,7 @@ h6 {
 .site-head {
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #fff;
+    color: #999;
     background: var(--color-base);
     background-position: center;
     background-size: cover;
@@ -673,12 +691,13 @@ h6 {
 .site-nav-item {
     display: inline-block;
     padding: 5px 10px;
-    color: #fff;
+    color: var(--color-primary);
     opacity: 0.7;
 }
 
 .site-nav-item:hover {
     text-decoration: none;
+    color: var(--color-secondary);
     opacity: 1;
 }
 
@@ -688,7 +707,17 @@ h6 {
 }
 
 .site-logo {
-    height: 25px;
+    height: 50px;
+}
+
+.site-desc {
+    color: #999;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.site-desc:hover {
+    text-decoration: none;
 }
 
 .site-mast {
@@ -716,7 +745,7 @@ h6 {
 .site-banner-title {
     margin: 0;
     padding: 0;
-    color: #fff;
+    color: rgb(169, 25, 216);
     font-size: 4rem;
     line-height: 1.3em;
 }
@@ -744,7 +773,7 @@ h6 {
     display: inline-block;
     padding: 5px 10px;
     border: #fff 1px solid;
-    color: #fff;
+    color: var(--color-secondary);
     font-size: 1.3rem;
     line-height: 1em;
     border-radius: var(--radius);
@@ -803,6 +832,7 @@ h6 {
 .post-card-title {
     margin: 0 0 10px 0;
     padding: 0;
+    color: #000;
 }
 
 .post-card-excerpt {
@@ -985,7 +1015,7 @@ h6 {
 
 .site-foot {
     padding: 20px 0 40px 0;
-    color: rgba(255,255,255,0.7);
+    color: #999;
     font-size: 1.3rem;
     background: var(--color-base);
 }
@@ -997,12 +1027,12 @@ h6 {
 }
 
 .site-foot-nav a {
-    color: rgba(255,255,255,0.7);
+    color: var(--color-primary);
 }
 
 .site-foot-nav a:hover {
     text-decoration: none;
-    color: rgba(255,255,255,1);
+    color: var(--color-secondary);
 }
 
 .site-foot-nav-right a {

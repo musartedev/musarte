@@ -40,7 +40,7 @@ const Author = ({ data, location, pageContext }) => {
                             {author.profile_image && <img src={author.profile_image} alt={author.name} />}
                         </div>
                     </header>
-                    <section className="post-feed">
+                    <section className="mus-post-feed">
                         {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
                             <PostCard key={node.id} post={node} />
