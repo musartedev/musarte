@@ -2,11 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
-import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
 const PostCard = ({ post }) => {
     const url = `/${post.slug}/`
-    const readingTime = readingTimeHelper(post)
 
     return (
         <Link to={url} className="post-card">
@@ -31,7 +29,7 @@ const PostCard = ({ post }) => {
                     <span>{ post.primary_author.name }</span>
                 </div>
                 <div className="post-card-footer-right">
-                    <div>{readingTime}</div>
+                    <div>{post.created_at_pretty}</div>
                 </div>
             </footer>
         </Link>
@@ -44,6 +42,7 @@ PostCard.propTypes = {
         title: PropTypes.string.isRequired,
         feature_image: PropTypes.string,
         featured: PropTypes.bool,
+        created_at_pretty: PropTypes.string.isRequired,
         tags: PropTypes.arrayOf(
             PropTypes.shape({
                 name: PropTypes.string,

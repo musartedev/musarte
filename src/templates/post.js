@@ -40,6 +40,14 @@ const Post = ({ data, location }) => {
                                 className="content-body load-external-scripts"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
+                            <div className="content-footer">
+                                {/* <div className="content-footer-author">
+                                    -Mariangélica Useche
+                                </div> */}
+                                <div className="content-footer-date">
+                                    {post.created_at_pretty}
+                                </div>
+                            </div>
                         </section>
                     </article>
                 </div>
@@ -55,6 +63,7 @@ Post.propTypes = {
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
+            created_at_pretty: PropTypes.string.isRequired
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
