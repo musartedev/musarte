@@ -461,7 +461,7 @@ h4,
 h5,
 h6 {
     margin-top: 0;
-    color: var(--color-base);
+    color: var(--color-b);
     line-height: 1.15;
     font-weight: 700;
     text-rendering: optimizeLegibility;
@@ -1056,7 +1056,7 @@ h6 {
 .kg-bookmark-container {
     display: flex;
     min-height: 148px;
-    color: var(--color-base);
+    color: #999;
     font-family: var(--font-sans-serif);
     text-decoration: none;
     border-radius: 3px;
@@ -1064,9 +1064,15 @@ h6 {
 }
 
 .kg-bookmark-container:hover {
-    color: var(--color-base);
+    color: #999;
     text-decoration: none;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+}
+
+figcaption {
+    font-size: small;
+    text-align: center;
+    font-weight: unset;
 }
 
 .kg-bookmark-content {
