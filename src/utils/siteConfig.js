@@ -1,10 +1,10 @@
 module.exports = {
-    siteUrl: `https://musarte-blog.herokuapp.com`, // Site domain. Do not include a trailing slash!
+    siteUrl: `https://musarte.dev`, // Site domain. Do not include a trailing slash!
 
     postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
-    siteTitleMeta: `Musarte`, // This allows an alternative site title for meta data for pages.
-    siteDescriptionMeta: `Coding life...`, // This allows an alternative site description for meta data for pages.
+    siteTitleMeta: `Musarte - Mariangélica Useche`, // This allows an alternative site title for meta data for pages.
+    siteDescriptionMeta: `Perks of being a developer`, // This allows an alternative site description for meta data for pages.
 
     shareImageWidth: 1000, // Change to the width of your default share image
     shareImageHeight: 523, // Change to the height of your default share image
