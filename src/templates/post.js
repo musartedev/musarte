@@ -6,14 +6,9 @@ import Helmet from 'react-helmet'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
-/**
-* Single post view (/:slug)
-*
-* This file renders a single post and loads all the content.
-*
-*/
 const Post = ({ data, location }) => {
-    const post = data.ghostPost
+    let post = data.ghostPost
+    post.html = post.html.replace(/<a/, `<a target="_blank"`)
 
     return (
         <>
@@ -63,7 +58,7 @@ Post.propTypes = {
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
-            created_at_pretty: PropTypes.string.isRequired
+            created_at_pretty: PropTypes.string.isRequired,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
