@@ -35,7 +35,6 @@ const DefaultLayout = ({ data, children, bodyClass }) => {
 
                 <div className="viewport-top">
                     {/* The main header section on top of the screen */}
-                    {/* <header className="site-head" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}> */}
                     <header className="site-head">
                         <div className="container">
                             <div className="site-mast">
@@ -50,7 +49,7 @@ const DefaultLayout = ({ data, children, bodyClass }) => {
                                 </div>
                                 <div className="site-mast-right">
                                     { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                    <a href={ instagramUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/instagram.svg" alt="Facebook" /></a>
+                                    <a href={ instagramUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/instagram.svg" alt="Instagram" /></a>
                                     <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
                                 </div>
                             </div>
@@ -58,15 +57,11 @@ const DefaultLayout = ({ data, children, bodyClass }) => {
                                 <div className="site-nav-left">
                                     <Navigation data={site.navigation} navClass="site-nav-item" />
                                 </div>
-                                {/* <div className="site-nav-right">
-                                    <Link className="site-nav-button" to="/about">About</Link>
-                                </div> */}
                             </nav>
                         </div>
                     </header>
 
                     <main className="site-main">
-                        {/* All the main content gets inserted here, index.js, post.js */}
                         {children}
                     </main>
 
@@ -77,11 +72,11 @@ const DefaultLayout = ({ data, children, bodyClass }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2020 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                <Link to="/">{site.title}</Link> © 2020 &mdash; Publicado con <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
                             </div>
-                            {/* <div className="site-foot-nav-right">
+                            <div className="site-foot-nav-right">
                                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />
-                            </div> */}
+                            </div>
                         </div>
                     </footer>
 

@@ -8,7 +8,7 @@ import { MetaData } from '../components/common/meta'
 
 const Post = ({ data, location }) => {
     let post = data.ghostPost
-    post.html = post.html.replace(/<a/, `<a target="_blank"`)
+    post.html = post.html.replace(/<a/g, `<a target="_blank"`)
 
     return (
         <>
@@ -36,9 +36,6 @@ const Post = ({ data, location }) => {
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
                             <div className="content-footer">
-                                {/* <div className="content-footer-author">
-                                    -Mariangélica Useche
-                                </div> */}
                                 <div className="content-footer-date">
                                     {post.created_at_pretty}
                                 </div>

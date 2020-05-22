@@ -25,11 +25,12 @@ what's here to work the way you'd like it to.
     --color-primary: #5F147D;
 
     --color-base: #fff;
-    --color-secondary: #3B94AB;
-    --color-pink: #A873A8;
+    --color-secondary: rgb(51, 126, 145);
+    --color-pink: rgb(160, 111, 160);
     --color-border: #c7d5d8;
     --color-bg: #f5f5f5;
     --color-text-default: #3c484e;
+    --color-text-secondary: #999;
 
 
     /* Dark Mode Colours */
@@ -193,6 +194,7 @@ a:active,
 a:hover {
     outline: 0;
     text-decoration: none;
+    color: var(--color-secondary);
 }
 b,
 strong {
@@ -836,15 +838,24 @@ h6 {
 
 .post-card:hover {
     text-decoration: none;
+    color: var(--color-text-default)
 }
 
 .post-card-tags {
     margin: 0 0 5px 0;
     font-size: 1.4rem;
     line-height: 1.15em;
-    color: var(--color-secondary);
+
 }
 
+
+.post-card-tags span {
+    padding: 2px 5px;
+    background-color: var(--color-pink);
+    color: white;
+    border-radius: 10px;
+    font-size: 12px;
+}
 
 .post-card-title {
     margin: 0 0 10px 0;
