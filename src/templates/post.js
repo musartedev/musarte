@@ -9,8 +9,7 @@ import { MetaData } from '../components/common/meta'
 
 const Post = ({ data, location }) => {
     let post = data.ghostPost
-    console.log("Post -> post", post)
-    post.html = post.html.replace(/<a/g, `<a target="_blank"`)
+    post.html = post.html.replace(/<a/g, `<a target="_blank" rel="noopener noreferrer"`)
 
     return (
         <>
