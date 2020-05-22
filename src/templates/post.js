@@ -10,6 +10,7 @@ import { MetaData } from '../components/common/meta'
 const Post = ({ data, location }) => {
     let post = data.ghostPost
     post.html = post.html.replace(/<a/g, `<a target="_blank" rel="noopener noreferrer"`)
+    post.html = post.html.replace(/<img/g, `<img alt="musarte-blog-figure"`)
 
     return (
         <>
