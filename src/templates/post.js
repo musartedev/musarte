@@ -2,12 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import { DiscussionEmbed } from 'disqus-react'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 const Post = ({ data, location }) => {
     let post = data.ghostPost
+    console.log("Post -> post", post)
     post.html = post.html.replace(/<a/g, `<a target="_blank"`)
 
     return (
@@ -42,6 +44,16 @@ const Post = ({ data, location }) => {
                             </div>
                         </section>
                     </article>
+                    <section className="comments">
+                        <DiscussionEmbed
+                            shortname="musarte"
+                            config={{
+                                url: post.url,
+                                identifier: post.id,
+                                title: post.title,
+                            }}
+                        />
+                    </section>
                 </div>
             </Layout>
         </>
@@ -56,6 +68,8 @@ Post.propTypes = {
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
             created_at_pretty: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
