@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-ghost",
   "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Ghost Foundation",
   "homepage": "https://docs.ghost.org/api/gatsby/",
