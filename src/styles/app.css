@@ -848,13 +848,13 @@ h6 {
 
 }
 
-
 .post-card-tags span {
-    padding: 2px 5px;
+    padding: 2px 10px;
     background-color: var(--color-pink);
     color: white;
     border-radius: 10px;
-    font-size: 12px;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .post-card-title {
@@ -1043,7 +1043,7 @@ h6 {
 
 .site-foot {
     padding: 20px 0 40px 0;
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     font-size: 1.3rem;
     background: var(--color-base);
 }
