@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
@@ -19,20 +19,29 @@ import '../../styles/app.css'
 *
 */
 const DefaultLayout = ({ data, children, bodyClass }) => {
-    const site = data.allGhostSettings.edges[0].node
-    const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
-    const instagramUrl = `https://www.instagram.com/musarte.dev`
+    const [darkMode, setDarkMode] = useState(false);
+
+    const toggleDarkMode = () => setDarkMode(!darkMode);
+
+    const site = data.allGhostSettings.edges[0].node;
+    const twitterUrl = site.twitter
+        ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
+        : null;
+    const instagramUrl = `https://www.instagram.com/musarte.dev`;
 
     return (
         <>
             <Helmet>
                 <html lang={site.lang} />
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
-                <body className={bodyClass} />
+                <body
+                    className={`${bodyClass} ${
+                        darkMode ? `is-dark-mode` : `is-light-mode`
+                    }`}
+                />
             </Helmet>
 
             <div className="viewport">
-
                 <div className="viewport-top">
                     {/* The main header section on top of the screen */}
                     <header className="site-head">
@@ -40,17 +49,45 @@ const DefaultLayout = ({ data, children, bodyClass }) => {
                             <div className="site-mast">
                                 <div className="site-mast-left">
                                     <Link to="/">
-                                        {site.logo ?
-                                            <img className="site-logo" src={site.logo} alt={site.title} />
-                                            : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
-                                        }
-                                        <span className="site-desc">{site.description}</span>
+                                        {site.logo ? (
+                                            <img
+                                                className="site-logo"
+                                                src={site.logo}
+                                                alt={site.title}
+                                            />
+                                        ) : (
+                                            <Img
+                                                fixed={
+                                                    data.file.childImageSharp
+                                                        .fixed
+                                                }
+                                                alt={site.title}
+                                            />
+                                        )}
+                                        <span
+                                            className="site-desc"
+                                            onClick={toggleDarkMode}
+                                        >
+                                            Mariangélica Useche
+                                        </span>
                                     </Link>
                                 </div>
                                 <div className="site-mast-right">
                                     { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
                                     <a href={ instagramUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/instagram.svg" alt="Instagram" /></a>
                                     <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
+                                </div>
+                                <div className="dark-mode">
+                                    <input
+                                        type="checkbox"
+                                        className="checkbox"
+                                        id="checkbox"
+                                        onChange={toggleDarkMode}
+                                    />
+                                    <label
+                                        className="switch"
+                                        htmlFor="checkbox"
+                                    ></label>
                                 </div>
                             </div>
                             <nav className="site-nav">
@@ -72,20 +109,29 @@ const DefaultLayout = ({ data, children, bodyClass }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2020 &mdash; Publicado con <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                Hecho con 💜 por
+                                <a
+                                    className="site-foot-nav-item"
+                                    href="https://github.com/musenberg404"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Mariangélica Useche
+                                </a> © 2020
                             </div>
                             <div className="site-foot-nav-right">
-                                <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                                <Navigation
+                                    data={site.navigation}
+                                    navClass="site-foot-nav-item"
+                                />
                             </div>
                         </div>
                     </footer>
-
                 </div>
             </div>
-
         </>
-    )
-}
+    );
+};
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
