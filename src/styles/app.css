@@ -294,7 +294,7 @@ th {
 
 /* Themes */
 /* ---------------------------------------------------------- */
-.is-light-mode {
+.light {
     /* Colours */
     --color-primary: #5f147d;
 
@@ -307,7 +307,7 @@ th {
     --color-text-secondary: #999;
 }
 
-.is-dark-mode {
+.dark {
     /* Dark Mode Colours */
     --color-primary: #ba46e8;
 
@@ -729,10 +729,6 @@ h6 {
     margin: -5px 0 0;
 }
 
-.site-logo {
-    height: 50px;
-}
-
 .site-desc {
     color: var(--color-text-secondary);
     font-size: 20px;
@@ -756,6 +752,16 @@ h6 {
 
 .site-mast-right .site-nav-item:last-child {
     padding-right: 0;
+}
+
+.site-mast-left {
+    display: flex;
+    align-items: center;
+}
+
+.site-mast-social {
+    margin-right: 25px;
+    align-self: center;
 }
 
 .site-banner {
@@ -810,8 +816,28 @@ h6 {
 .dark-mode {
     display: flex;
     justify-content: space-between;
-    padding-top: 1em;
 }
+
+.dark-mode span {
+    transition: 0.5s;
+}
+
+.dark-mode-icon {
+    position: absolute;
+    left: 5;
+    bottom: 1px;
+    font-size: 18px;
+    /* margin-top: auto;
+    margin-bottom: auto; */
+}
+
+.light-mode-icon {
+    position: absolute;
+    right: 5px;
+    bottom: 1px;
+    font-size: 18px;
+}
+
 .checkbox {
     display: none;
 }
@@ -819,21 +845,22 @@ h6 {
     transform: translateX(0);
 }
 .switch {
-    height: 20px;
+    height: 30px;
     display: block;
     border-radius: 20px;
     border: 1px solid var(--color-primary);
-    width: 50px;
+    width: 60px;
     padding: 4px;
     box-sizing: border-box;
     cursor: pointer;
     user-select: none;
+    position: relative;
 }
 .switch::before {
     content: "";
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     padding-right: 2px;
     background: var(--color-text-default);
     border-radius: 50%;
@@ -1098,7 +1125,7 @@ h6 {
 }
 
 .site-foot-nav-item {
-    margin-left: .2em;
+    margin-left: 0.2em;
 }
 
 .site-foot-nav-right a {
@@ -1111,7 +1138,7 @@ h6 {
 }
 
 .author .publisher-anchor-color a {
-    color: var(--color-primary)
+    color: var(--color-primary);
 }
 /* Koenig Styles
 /* ---------------------------------------------------------- */
@@ -1268,4 +1295,17 @@ figcaption {
 .kg-image-card.kg-width-wide + .kg-gallery-card,
 .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
     margin: -2.25em 0 3em;
+}
+
+.fade-in {
+    animation: fadeIn ease 20s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
