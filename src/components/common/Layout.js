@@ -93,11 +93,11 @@ const DefaultLayout = ({ data, children }) => {
                                                     id="checkbox"
                                                     onChange={e => toggleTheme(
                                                         e.target.checked
-                                                            ? `dark`
-                                                            : `light`
+                                                            ? `light`
+                                                            : `dark`
                                                     )
                                                     }
-                                                    checked={theme === `dark`}
+                                                    checked={theme === `light`}
                                                 >
                                                 </input>
                                                 <label
