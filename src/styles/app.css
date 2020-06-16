@@ -313,7 +313,7 @@ th {
 
     --color-base: rgb(45, 45, 45);
     --color-secondary: rgb(135, 215, 252);
-    --color-pink: rgb(210, 144, 210);
+    --color-pink: rgb(172, 108, 172);
     --color-border: #c7d5d8;
     --color-bg: #000;
     --color-text-default: #fff;
@@ -1017,6 +1017,8 @@ h6 {
     display: flex;
     justify-content: space-between;
     margin: 0 0 4vw;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
 .author-header h1 {
@@ -1032,7 +1034,7 @@ h6 {
 
 .author-header-image {
     flex: 0 0 auto;
-    margin: 0 0 0 4vw;
+    margin: 0 0 25px 4vw;
     height: 120px;
     width: 120px;
     border-radius: 100%;
@@ -1053,17 +1055,37 @@ h6 {
     padding-left: 0;
 }
 
+.author-info section {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.author-social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.author-social-links a {
+    margin-left: 2em;
+    font-size: 25px;
+}
+
 @media (max-width: 500px) {
     .author-header {
-        border-bottom: var(--color-bg) 1px solid;
         padding-bottom: 4vw;
     }
     .author-header p {
         font-size: 1.7rem;
     }
     .author-header-image {
-        height: 80px;
-        width: 80px;
+        height: 100px;
+        width: 100px;
+    }
+    .author-info section {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: justify;
     }
 }
 
