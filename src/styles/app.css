@@ -20,32 +20,10 @@ what's here to work the way you'd like it to.
 /* ---------------------------------------------------------- */
 
 :root {
-
-    /* Colours */
-    --color-primary: #5F147D;
-
-    --color-base: #fff;
-    --color-secondary: rgb(51, 126, 145);
-    --color-pink: rgb(160, 111, 160);
-    --color-border: #c7d5d8;
-    --color-bg: #f5f5f5;
-    --color-text-default: #3c484e;
-    --color-text-secondary: #999;
-
-
-    /* Dark Mode Colours */
-    /* --color-primary: #ac35c1;
-
-    --color-base: rgb(31, 31, 31);
-    --color-secondary: rgb(78, 170, 213);
-    --color-pink: rgb(227, 153, 209);
-    --color-border: #c7d5d8;
-    --color-bg: #000;
-    --color-text-default: #fff;
-    --color-text-secondary: #eee; */
-
     /* Fonts */
-    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
     --font-light: 100;
@@ -57,9 +35,7 @@ what's here to work the way you'd like it to.
     --height: 4rem;
     --margin: 2rem;
     --radius: 0.6rem;
-
 }
-
 
 /* Reset
 /* ---------------------------------------------------------- */
@@ -233,7 +209,7 @@ svg:not(:root) {
 }
 mark {
     background-color: var(--color-primary);
-    color:white;
+    color: white;
 }
 code,
 kbd,
@@ -316,6 +292,34 @@ th {
     padding: 0;
 }
 
+/* Themes */
+/* ---------------------------------------------------------- */
+.light {
+    /* Colours */
+    --color-primary: #5f147d;
+
+    --color-base: #fff;
+    --color-secondary: rgb(51, 126, 145);
+    --color-pink: rgb(160, 111, 160);
+    --color-border: #c7d5d8;
+    --color-bg: #f5f5f5;
+    --color-text-default: #3c484e;
+    --color-text-secondary: #999;
+}
+
+.dark {
+    /* Dark Mode Colours */
+    --color-primary: #ba46e8;
+
+    --color-base: rgb(45, 45, 45);
+    --color-secondary: rgb(135, 215, 252);
+    --color-pink: rgb(172, 108, 172);
+    --color-border: #c7d5d8;
+    --color-bg: #000;
+    --color-text-default: #fff;
+    --color-text-secondary: #eee;
+}
+
 /* Defaults
 /* ---------------------------------------------------------- */
 
@@ -331,7 +335,8 @@ html {
 body {
     overflow-x: hidden;
     color: var(--color-text-default);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.5rem;
     line-height: 1.6em;
     font-weight: 400;
@@ -600,7 +605,7 @@ h6 {
 }
 
 .content-body h1 {
-    margin: 1.0em 0 0.5em 0;
+    margin: 1em 0 0.5em 0;
     font-size: 3.4rem;
     font-weight: 700;
 }
@@ -664,7 +669,7 @@ h6 {
     margin: 0.5em 0;
     padding: 1em 0 1.5em;
     border: 0;
-    font-family: Georgia,serif;
+    font-family: Georgia, serif;
     color: var(--color-primary);
     font-style: italic;
     font-size: 3.2rem;
@@ -674,7 +679,7 @@ h6 {
 
 .content-body h6 {
     margin: 0.5em 0 0.2em 0;
-    font-size: 2.0rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
@@ -711,7 +716,6 @@ h6 {
     display: inline-block;
     padding: 5px 10px;
     color: var(--color-primary);
-    opacity: 0.7;
 }
 
 .site-nav-item:hover {
@@ -723,10 +727,6 @@ h6 {
 .site-nav-icon {
     height: 15px;
     margin: -5px 0 0;
-}
-
-.site-logo {
-    height: 50px;
 }
 
 .site-desc {
@@ -752,6 +752,16 @@ h6 {
 
 .site-mast-right .site-nav-item:last-child {
     padding-right: 0;
+}
+
+.site-mast-left {
+    display: flex;
+    align-items: center;
+}
+
+.site-mast-social {
+    margin-right: 25px;
+    align-self: center;
 }
 
 .site-banner {
@@ -803,6 +813,62 @@ h6 {
     text-decoration: none;
 }
 
+.dark-mode {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dark-mode span {
+    transition: 0.5s;
+}
+
+.dark-mode-icon {
+    position: absolute;
+    left: 5;
+    bottom: 1px;
+    font-size: 18px;
+    /* margin-top: auto;
+    margin-bottom: auto; */
+}
+
+.light-mode-icon {
+    position: absolute;
+    right: 5px;
+    bottom: 1px;
+    font-size: 18px;
+}
+
+.checkbox {
+    display: none;
+}
+.checkbox:checked ~ .switch:before {
+    transform: translateX(0);
+}
+.switch {
+    height: 30px;
+    display: block;
+    border-radius: 20px;
+    border: 1px solid var(--color-primary);
+    width: 60px;
+    padding: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+.switch::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding-right: 2px;
+    background: var(--color-text-default);
+    border-radius: 50%;
+    transform: translateX(30px);
+    transition: 0.3s;
+    will-change: transform;
+}
+
 /* Main
 /* ---------------------------------------------------------- */
 
@@ -838,14 +904,13 @@ h6 {
 
 .post-card:hover {
     text-decoration: none;
-    color: var(--color-text-default)
+    color: var(--color-text-default);
 }
 
 .post-card-tags {
     margin: 0 0 5px 0;
     font-size: 1.4rem;
     line-height: 1.15em;
-
 }
 
 .post-card-tags span {
@@ -916,7 +981,6 @@ h6 {
     width: 26px;
 }
 
-
 /* Tag Archives
 /* ---------------------------------------------------------- */
 
@@ -946,7 +1010,6 @@ h6 {
     }
 }
 
-
 /* Author Archives
 /* ---------------------------------------------------------- */
 
@@ -954,6 +1017,8 @@ h6 {
     display: flex;
     justify-content: space-between;
     margin: 0 0 4vw;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
 .author-header h1 {
@@ -969,7 +1034,7 @@ h6 {
 
 .author-header-image {
     flex: 0 0 auto;
-    margin: 0 0 0 4vw;
+    margin: 0 0 25px 4vw;
     height: 120px;
     width: 120px;
     border-radius: 100%;
@@ -990,20 +1055,39 @@ h6 {
     padding-left: 0;
 }
 
+.author-info section {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.author-social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.author-social-links a {
+    margin-left: 2em;
+    font-size: 25px;
+}
+
 @media (max-width: 500px) {
     .author-header {
-        border-bottom: var(--color-bg) 1px solid;
         padding-bottom: 4vw;
     }
     .author-header p {
         font-size: 1.7rem;
     }
     .author-header-image {
-        height: 80px;
-        width: 80px;
+        height: 100px;
+        width: 100px;
+    }
+    .author-info section {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: justify;
     }
 }
-
 
 /* Pagination
 /* ---------------------------------------------------------- */
@@ -1037,7 +1121,6 @@ h6 {
     font-size: 1.3rem;
 }
 
-
 /* Footer
 /* ---------------------------------------------------------- */
 
@@ -1063,6 +1146,10 @@ h6 {
     color: var(--color-secondary);
 }
 
+.site-foot-nav-item {
+    margin-left: 0.2em;
+}
+
 .site-foot-nav-right a {
     display: inline-block;
     padding: 2px 5px;
@@ -1072,7 +1159,9 @@ h6 {
     padding-right: 0;
 }
 
-
+.author .publisher-anchor-color a {
+    color: var(--color-primary);
+}
 /* Koenig Styles
 /* ---------------------------------------------------------- */
 
@@ -1200,32 +1289,45 @@ figcaption {
     flex-direction: column;
     max-width: 1040px;
     width: 100%;
-  }
+}
 
-  .kg-gallery-row {
+.kg-gallery-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
+}
 
-  .kg-gallery-image img {
+.kg-gallery-image img {
     display: block;
     margin: 0;
     width: 100%;
     height: 100%;
-  }
+}
 
-  .kg-gallery-row:not(:first-of-type) {
+.kg-gallery-row:not(:first-of-type) {
     margin: 0.75em 0 0 0;
-  }
+}
 
-  .kg-gallery-image:not(:first-of-type) {
+.kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 0.75em;
-  }
+}
 
-  .kg-gallery-card + .kg-image-card.kg-width-wide,
-  .kg-gallery-card + .kg-gallery-card,
-  .kg-image-card.kg-width-wide + .kg-gallery-card,
-  .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
+.kg-gallery-card + .kg-image-card.kg-width-wide,
+.kg-gallery-card + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
     margin: -2.25em 0 3em;
-  }
+}
+
+.fade-in {
+    animation: fadeIn ease 20s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

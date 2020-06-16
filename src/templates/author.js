@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { Layout, PostCard, Pagination } from '../components/common'
+import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
@@ -11,11 +11,11 @@ import { MetaData } from '../components/common/meta'
 * Loads all posts for the requested author incl. pagination.
 *
 */
-const Author = ({ data, location, pageContext }) => {
+const Author = ({ data, location }) => {
     const author = data.ghostAuthor
-    const posts = data.allGhostPost.edges
-    const twitterUrl = author.twitter ? `https://twitter.com/${author.twitter.replace(/^@/, ``)}` : null
-    const facebookUrl = author.facebook ? `https://www.facebook.com/${author.facebook.replace(/^\//, ``)}` : null
+    const twitterUrl = `https://twitter.com/musartedev`
+    const githubUrl = `https://github.com/musenberg404`
+    const instagramUrl = `https://instagram.com/musarte.dev`
 
     return (
         <>
@@ -30,23 +30,35 @@ const Author = ({ data, location, pageContext }) => {
                         <div className="author-header-content">
                             <h1>{author.name}</h1>
                             {author.bio && <p>{author.bio}</p>}
-                            <div className="author-header-meta">
-                                {author.website && <a className="author-header-item" href={author.website} target="_blank" rel="noopener noreferrer">Website</a>}
-                                {twitterUrl && <a className="author-header-item" href={twitterUrl} target="_blank" rel="noopener noreferrer">Twitter</a>}
-                                {facebookUrl && <a className="author-header-item" href={facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>}
-                            </div>
                         </div>
                         <div className="author-header-image">
                             {author.profile_image && <img src={author.profile_image} alt={author.name} />}
                         </div>
+
                     </header>
-                    <section className="mus-post-feed">
-                        {posts.map(({ node }) => (
-                            // The tag below includes the markup for each post - components/common/PostCard.js
-                            <PostCard key={node.id} post={node} />
-                        ))}
-                    </section>
-                    <Pagination pageContext={pageContext} />
+                    <main className="author-info">
+                        <section className="author-bio">
+                            <div className="author-bio-content">
+                                ✨ Hola, puedes llamarme Mus 👓.
+                                Soy Lic. en Computación y desarrolladora Full Stack, enfocada en MERN 🤓.
+                                Estoy orgullosa de ser Platzi Master 💚 y parte del equipo de
+                                <a href={`http://burea.app`} target="_blank" rel="noopener noreferrer"> BUREA.app</a> 💜.
+                                Amo hacer (y comer) pancakes, el yoga no falta en mi vida y me gusta mucho bailar.
+                            </div>
+                        </section>
+                        <section className="author-social">
+                            <div className="author-social-content">
+                                <p>
+                                    👩🏽‍💻 Te invito a que mantengamos contacto a través de mis redes sociales
+                                </p>
+                                <div className="author-social-links">
+                                    <a href={twitterUrl} target="_blank" rel="noopener noreferrer"><span className="icon-twitter"/></a>
+                                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer"><span className="icon-instagram"/></a>
+                                    <a href={githubUrl} target="_blank" rel="noopener noreferrer"><span className="icon-github"/></a>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
                 </div>
             </Layout>
         </>
