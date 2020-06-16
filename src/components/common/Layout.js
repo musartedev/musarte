@@ -1,4 +1,4 @@
-import React from "react"
+import React,{ useEffect } from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { Link, StaticQuery, graphql } from "gatsby"
@@ -21,6 +21,10 @@ import "../../styles/icons.css"
  *
  */
 const DefaultLayout = ({ data, children }) => {
+    useEffect(() => {
+        localStorage.setItem(`theme`, `light`)
+    }, [])
+
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
