@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { Link, StaticQuery, graphql } from "gatsby"
@@ -21,10 +21,6 @@ import "../../styles/icons.css"
  *
  */
 const DefaultLayout = ({ data, children }) => {
-    useEffect(() => {
-        localStorage.setItem(`theme`, `light`)
-    }, [])
-
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
@@ -89,30 +85,34 @@ const DefaultLayout = ({ data, children }) => {
                                         </a>
                                     </div>
                                     <ThemeToggler>
-                                        {({ theme, toggleTheme }) => (
-                                            <div className="dark-mode">
-                                                <input
-                                                    type="checkbox"
-                                                    className="checkbox"
-                                                    id="checkbox"
-                                                    onChange={e => toggleTheme(
-                                                        e.target.checked
-                                                            ? `light`
-                                                            : `dark`
-                                                    )
-                                                    }
-                                                    checked={theme === `light`}
-                                                >
-                                                </input>
-                                                <label
-                                                    className="switch"
-                                                    htmlFor="checkbox"
-                                                >
-                                                    {theme !== `dark` && <span className="dark-mode-icon">🌜</span>}
-                                                    {theme === `dark` && <span className="light-mode-icon">☀️</span>}
-                                                </label>
-                                            </div>
-                                        )}
+                                        {({ theme, toggleTheme }) => {
+                                            return (
+                                                <div className="dark-mode">
+                                                    <input
+                                                        type="checkbox"
+                                                        className="checkbox"
+                                                        id="checkbox"
+                                                        onChange={e => toggleTheme(
+                                                            e.target.checked
+                                                                ? `light`
+                                                                : `dark`
+                                                        )
+                                                        }
+                                                        checked={theme === `light`}
+                                                    >
+                                                    </input>
+                                                    <label
+                                                        className="switch"
+                                                        htmlFor="checkbox"
+                                                    >
+                                                        {theme !== `dark` ?
+                                                            <span className="dark-mode-icon">🌜</span> :
+                                                            <span className="light-mode-icon">☀️</span>
+                                                        }
+                                                    </label>
+                                                </div>
+                                            )
+                                        }}
                                     </ThemeToggler>
                                 </div>
 
