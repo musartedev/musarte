@@ -824,7 +824,7 @@ h6 {
 
 .dark-mode-icon {
     position: absolute;
-    left: 5;
+    right: 5px;
     bottom: 1px;
     font-size: 18px;
     /* margin-top: auto;
@@ -833,7 +833,7 @@ h6 {
 
 .light-mode-icon {
     position: absolute;
-    right: 5px;
+    left: 5;
     bottom: 1px;
     font-size: 18px;
 }
