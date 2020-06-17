@@ -936,7 +936,7 @@ h6 {
     width: auto;
     height: 200px;
     background: var(--color-secondary) no-repeat center center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .post-card-footer {
@@ -1000,7 +1000,6 @@ h6 {
 
 @media (max-width: 500px) {
     .tag-header {
-        border-bottom: var(--color-bg) 1px solid;
         padding-bottom: 4vw;
     }
     .tag-header p {
