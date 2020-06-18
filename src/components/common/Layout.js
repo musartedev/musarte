@@ -85,34 +85,32 @@ const DefaultLayout = ({ data, children }) => {
                                         </a>
                                     </div>
                                     <ThemeToggler>
-                                        {({ theme, toggleTheme }) => {
-                                            return (
-                                                <div className="dark-mode">
-                                                    <input
-                                                        type="checkbox"
-                                                        className="checkbox"
-                                                        id="checkbox"
-                                                        onChange={e => toggleTheme(
-                                                            e.target.checked
-                                                                ? `light`
-                                                                : `dark`
-                                                        )
-                                                        }
-                                                        checked={theme === `light`}
-                                                    >
-                                                    </input>
-                                                    <label
-                                                        className="switch"
-                                                        htmlFor="checkbox"
-                                                    >
-                                                        {theme !== `dark` ?
-                                                            <span className="dark-mode-icon">🌜</span> :
-                                                            <span className="light-mode-icon">☀️</span>
-                                                        }
-                                                    </label>
-                                                </div>
-                                            )
-                                        }}
+                                        {({ theme, toggleTheme }) => (
+                                            <div className="dark-mode">
+                                                <input
+                                                    type="checkbox"
+                                                    className="checkbox"
+                                                    id="checkbox"
+                                                    onChange={e => toggleTheme(
+                                                        e.target.checked
+                                                            ? `light`
+                                                            : `dark`
+                                                    )
+                                                    }
+                                                    checked={theme === `light`}
+                                                >
+                                                </input>
+                                                <label
+                                                    className="switch"
+                                                    htmlFor="checkbox"
+                                                >
+                                                    {theme !== `dark` ?
+                                                        <span className="dark-mode-icon">🌜</span> :
+                                                        <span className="light-mode-icon">☀️</span>
+                                                    }
+                                                </label>
+                                            </div>
+                                        )}
                                     </ThemeToggler>
                                 </div>
 
