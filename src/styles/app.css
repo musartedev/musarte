@@ -946,6 +946,8 @@ h6 {
     justify-content: space-between;
     margin: 10px 0 0 0;
     color: var(--color-secondary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
 }
 
 .post-card-footer-left {
