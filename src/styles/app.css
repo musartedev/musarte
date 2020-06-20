@@ -822,14 +822,14 @@ h6 {
     transition: 0.5s;
 }
 
-.dark-mode-icon {
+.light .dark-mode-icon {
     position: absolute;
     right: 5px;
     bottom: 1px;
     font-size: 18px;
 }
 
-.light-mode-icon {
+.dark .light-mode-icon {
     position: absolute;
     left: 5;
     bottom: 1px;
