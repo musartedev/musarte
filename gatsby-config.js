@@ -34,7 +34,6 @@ module.exports = {
         siteUrl: config.siteUrl,
     },
     plugins: [
-        `gatsby-plugin-dark-mode`,
         /**
          *  Content Plugins
          */
