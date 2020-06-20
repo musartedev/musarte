@@ -118,15 +118,6 @@ const DefaultLayout = ({ data, children }) => {
                                             className="switch"
                                             htmlFor="checkbox"
                                         >
-                                            {theme !== `dark` ? (
-                                                <span className="dark-mode-icon">
-                                                    🌜
-                                                </span>
-                                            ) : (
-                                                <span className="light-mode-icon">
-                                                    ☀️
-                                                </span>
-                                            )}
                                         </label>
                                     </div>
                                 </div>

@@ -305,6 +305,7 @@ th {
     --color-bg: #f5f5f5;
     --color-text-default: #3c484e;
     --color-text-secondary: #999;
+    --switch-content: "🌜"
 }
 
 .dark {
@@ -318,6 +319,7 @@ th {
     --color-bg: #000;
     --color-text-default: #fff;
     --color-text-secondary: #eee;
+    --switch-content: "☀️"
 }
 
 /* Defaults
@@ -813,34 +815,16 @@ h6 {
     text-decoration: none;
 }
 
-.dark-mode {
-    display: flex;
-    justify-content: space-between;
-}
 
-.dark-mode span {
-    transition: 0.5s;
-}
-
-.light .dark-mode-icon {
-    position: absolute;
-    right: 5px;
-    bottom: 1px;
-    font-size: 18px;
-}
-
-.dark .light-mode-icon {
-    position: absolute;
-    left: 5;
-    bottom: 1px;
-    font-size: 18px;
-}
 
 .checkbox {
     display: none;
 }
 .checkbox:checked ~ .switch:before {
     transform: translateX(0);
+}
+.checkbox:checked ~ .switch:after {
+    transform: translateX(30px);
 }
 .switch {
     height: 30px;
@@ -865,6 +849,23 @@ h6 {
     transform: translateX(30px);
     transition: 0.3s;
     will-change: transform;
+    position: relative;
+}
+
+.switch::after {
+    content: var(--switch-content);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    width: 20px;
+    height: 100%;
+    padding-right: 2px;
+    transform: translateX(0px);
+    transition: 0.3s;
+    will-change: transform;
+    font-size: 18px;
 }
 
 /* Main
