@@ -3,7 +3,7 @@ const fs = require(`fs`)
 // default icons for generating icons
 exports.defaultIcons = [
     {
-        src: `icons/icon-48x48.png`,
+        src: `icons/icon-144x73.png`,
         sizes: `48x48`,
         type: `image/png`,
     },
