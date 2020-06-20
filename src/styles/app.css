@@ -1035,7 +1035,7 @@ h6 {
 
 .author-header-image {
     flex: 0 0 auto;
-    margin: 0 0 25px 4vw;
+    margin-bottom: 25px;
     height: 120px;
     width: 120px;
     border-radius: 100%;
@@ -1064,11 +1064,13 @@ h6 {
 
 .author-social-links {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    display: flex;
+    margin: auto;
+    width: 300px;
 }
 
 .author-social-links a {
-    margin-left: 2em;
     font-size: 25px;
 }
 
