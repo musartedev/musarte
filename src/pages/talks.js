@@ -16,8 +16,6 @@ const Talks = () => (
                     <div className="youtube-feed">
                         <div className="youtube-video">
                             <iframe
-                                width="560"
-                                height="315"
                                 src="https://www.youtube.com/embed/dL_hkU9IBOM"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -26,9 +24,7 @@ const Talks = () => (
                         </div>
                         <div className="youtube-video">
                             <iframe
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/dL_hkU9IBOM"
+                                src="https://www.youtube.com/embed/VVV7ZGYLlv4"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
@@ -42,7 +38,7 @@ const Talks = () => (
                             rel="noopener noreferrer"
                             href="http://twitter.com/musarte"
                         >
-                            <span className="icon-twitter icon-spacing"/>
+                            <span className="icon-twitter icon-spacing" />
                         </a>
                         <a
                             target="_blank"

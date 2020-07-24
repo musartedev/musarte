@@ -706,6 +706,8 @@ h6 {
 /* ---------------------------------------------------------- */
 .youtube-feed {
     margin: auto;
+    width: 100%;
+    max-width: 560px;
     margin-bottom: 30px;
 }
 
@@ -713,6 +715,11 @@ h6 {
     margin-bottom: 50px;
     border-radius: 10px;
     overflow: hidden;
+}
+
+.youtube-video iframe {
+    width: 100%;
+    height: 315px;
 }
 
 /* Header
