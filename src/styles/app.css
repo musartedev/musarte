@@ -37,6 +37,36 @@ what's here to work the way you'd like it to.
     --radius: 0.6rem;
 }
 
+/* Themes */
+/* ---------------------------------------------------------- */
+.light {
+    /* Colours */
+    --color-primary: #5f147d;
+
+    --color-base: #fff;
+    --color-secondary: rgb(51, 126, 145);
+    --color-pink: rgb(160, 111, 160);
+    --color-border: #c7d5d8;
+    --color-bg: #f5f5f5;
+    --color-text-default: #3c484e;
+    --color-text-secondary: #999;
+    --switch-content: "🌜";
+}
+
+.dark {
+    /* Dark Mode Colours */
+    --color-primary: #ba46e8;
+
+    --color-base: rgb(45, 45, 45);
+    --color-secondary: rgb(135, 215, 252);
+    --color-pink: rgb(172, 108, 172);
+    --color-border: #c7d5d8;
+    --color-bg: #000;
+    --color-text-default: #fff;
+    --color-text-secondary: #eee;
+    --switch-content: "☀️";
+}
+
 /* Reset
 /* ---------------------------------------------------------- */
 
@@ -290,36 +320,6 @@ table {
 td,
 th {
     padding: 0;
-}
-
-/* Themes */
-/* ---------------------------------------------------------- */
-.light {
-    /* Colours */
-    --color-primary: #5f147d;
-
-    --color-base: #fff;
-    --color-secondary: rgb(51, 126, 145);
-    --color-pink: rgb(160, 111, 160);
-    --color-border: #c7d5d8;
-    --color-bg: #f5f5f5;
-    --color-text-default: #3c484e;
-    --color-text-secondary: #999;
-    --switch-content: "🌜"
-}
-
-.dark {
-    /* Dark Mode Colours */
-    --color-primary: #ba46e8;
-
-    --color-base: rgb(45, 45, 45);
-    --color-secondary: rgb(135, 215, 252);
-    --color-pink: rgb(172, 108, 172);
-    --color-border: #c7d5d8;
-    --color-bg: #000;
-    --color-text-default: #fff;
-    --color-text-secondary: #eee;
-    --switch-content: "☀️"
 }
 
 /* Defaults
@@ -702,6 +702,19 @@ h6 {
     border-radius: 12px;
 }
 
+/* Youtube Feed */
+/* ---------------------------------------------------------- */
+.youtube-feed {
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.youtube-video {
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 /* Header
 /* ---------------------------------------------------------- */
 
@@ -815,8 +828,6 @@ h6 {
     text-decoration: none;
 }
 
-
-
 .checkbox {
     display: none;
 }
@@ -858,7 +869,7 @@ h6 {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top:0;
+    top: 0;
     width: 20px;
     height: 100%;
     padding-right: 2px;
@@ -1266,6 +1277,11 @@ figcaption {
     margin-right: 8px;
     width: 22px;
     height: 22px;
+}
+
+.icon-spacing {
+    margin-left: .5em;
+    font-size: .9em;
 }
 
 .kg-bookmark-author {
