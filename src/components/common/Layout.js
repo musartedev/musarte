@@ -32,7 +32,7 @@ const DefaultLayout = ({ data, children }) => {
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
         : null
     const instagramUrl = `https://www.instagram.com/musarte.dev`
-    const githubUrl = `https://github.com/musenberg404`
+    const githubUrl = `https://github.com/musartedev`
 
     useEffect(() => {
         setTheme(window.__theme)

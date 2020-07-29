@@ -14,7 +14,7 @@ import { MetaData } from '../components/common/meta'
 const Author = ({ data, location }) => {
     const author = data.ghostAuthor
     const twitterUrl = `https://twitter.com/musartedev`
-    const githubUrl = `https://github.com/musenberg404`
+    const githubUrl = `https://github.com/musartedev`
     const instagramUrl = `https://instagram.com/musarte.dev`
 
     return (

@@ -7,7 +7,7 @@
   "homepage": "https://musarte.dev/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/musenberg404/musarte.git"
+    "url": "git+https://github.com/musartedev/musarte.git"
   },
   "keywords": [
     "gatsby",
