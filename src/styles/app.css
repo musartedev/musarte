@@ -378,6 +378,10 @@ video {
     vertical-align: middle;
 }
 
+iframe {
+    border-radius: 30px;
+}
+
 fieldset {
     margin: 0;
     padding: 0;
@@ -504,6 +508,10 @@ h1 {
     }
     .site-desc {
         display: none;
+    }
+    iframe {
+        width: 450px;
+        height: 250px;
     }
 }
 
@@ -700,26 +708,6 @@ h6 {
     background: var(--color-base);
     color: var(--color-text-secondary);
     border-radius: 12px;
-}
-
-/* Youtube Feed */
-/* ---------------------------------------------------------- */
-.youtube-feed {
-    margin: auto;
-    width: 100%;
-    max-width: 560px;
-    margin-bottom: 30px;
-}
-
-.youtube-video {
-    margin-bottom: 50px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.youtube-video iframe {
-    width: 100%;
-    height: 315px;
 }
 
 /* Header
@@ -1287,8 +1275,8 @@ figcaption {
 }
 
 .icon-spacing {
-    margin-left: .5em;
-    font-size: .9em;
+    margin-left: 0.5em;
+    font-size: 0.9em;
 }
 
 .kg-bookmark-author {
