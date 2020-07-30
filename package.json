@@ -40,6 +40,7 @@
     "gatsby-plugin-catch-links": "2.3.1",
     "gatsby-plugin-feed": "2.5.1",
     "gatsby-plugin-force-trailing-slashes": "1.0.4",
+    "gatsby-plugin-hotjar": "^1.0.1",
     "gatsby-plugin-manifest": "2.4.2",
     "gatsby-plugin-offline": "3.2.1",
     "gatsby-plugin-react-helmet": "3.3.1",
@@ -47,7 +48,7 @@
     "gatsby-source-filesystem": "2.3.1",
     "gatsby-source-ghost": "4.0.4",
     "gatsby-transformer-sharp": "2.5.2",
-    "lodash": "4.17.15",
+    "lodash": "^4.17.19",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "5.2.1"
