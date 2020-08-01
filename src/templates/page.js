@@ -7,11 +7,11 @@ import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
-* Single page (/:slug)
-*
-* This file renders a single page and loads all the content.
-*
-*/
+ * Single page (/:slug)
+ *
+ * This file renders a single page and loads all the content.
+ *
+ */
 const Page = ({ data, location }) => {
     const page = data.ghostPage
 
@@ -28,6 +28,14 @@ const Page = ({ data, location }) => {
             <Layout>
                 <div className="container">
                     <article className="content">
+                        {page.feature_image ? (
+                            <figure className="post-feature-image">
+                                <img
+                                    src={page.feature_image}
+                                    alt={page.title}
+                                />
+                            </figure>
+                        ) : null}
                         <h1 className="content-title">{page.title}</h1>
 
                         {/* The main page content */}
