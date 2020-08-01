@@ -579,7 +579,6 @@ h6 {
 .content-body {
     display: flex;
     flex-direction: column;
-    font-family: var(--font-serif);
 }
 
 .content-footer {
@@ -603,15 +602,6 @@ h6 {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-.content-body h1,
-.content-body h2,
-.content-body h3,
-.content-body h4,
-.content-body h5,
-.content-body h6 {
-    font-family: var(--font-sans-serif);
 }
 
 .content-body h1 {
@@ -1187,7 +1177,6 @@ h6 {
     display: flex;
     min-height: 148px;
     color: var(--color-text-secondary);
-    font-family: var(--font-sans-serif);
     text-decoration: none;
     border-radius: 3px;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
