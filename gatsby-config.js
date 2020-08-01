@@ -59,13 +59,6 @@ module.exports = {
                 name: `images`,
             },
         },
-        {
-            resolve: `gatsby-plugin-hotjar`,
-            options: {
-                id: 1922426,
-                sv: 6,
-            },
-        },
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         {
