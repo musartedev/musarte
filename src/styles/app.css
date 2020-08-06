@@ -378,10 +378,6 @@ video {
     vertical-align: middle;
 }
 
-iframe {
-    border-radius: 30px;
-}
-
 fieldset {
     margin: 0;
     padding: 0;
@@ -510,7 +506,7 @@ h1 {
         display: none;
     }
     iframe {
-        width: 450px;
+        width: 100%;
         height: 250px;
     }
 }
@@ -698,6 +694,10 @@ h6 {
     background: var(--color-base);
     color: var(--color-text-secondary);
     border-radius: 12px;
+}
+
+.youtube-video {
+    border-radius: 30px;
 }
 
 /* Header
