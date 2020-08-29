@@ -1179,7 +1179,6 @@ h6 {
     color: var(--color-text-secondary);
     text-decoration: none;
     border-radius: 3px;
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
 }
 
 .kg-bookmark-container:hover {
@@ -1244,7 +1243,8 @@ figcaption {
     height: 100%;
     border-radius: 0 3px 3px 0;
 
-    object-fit: cover;
+    object-fit: contain;
+    padding: 5px;
 }
 
 .kg-bookmark-metadata {
