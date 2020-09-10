@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
+import React from "react"
+import PropTypes from "prop-types"
+import { graphql } from "gatsby"
+import Helmet from "react-helmet"
 
-import { Layout } from '../components/common'
-import { MetaData } from '../components/common/meta'
+import { Layout } from "../components/common"
+import { MetaData } from "../components/common/meta"
 
 /**
  * Single page (/:slug)
@@ -17,11 +17,7 @@ const Page = ({ data, location }) => {
 
     return (
         <>
-            <MetaData
-                data={data}
-                location={location}
-                type="website"
-            />
+            <MetaData data={data} location={location} type="website" />
             <Helmet>
                 <style type="text/css">{`${page.codeinjection_styles}`}</style>
             </Helmet>
@@ -36,7 +32,13 @@ const Page = ({ data, location }) => {
                                 />
                             </figure>
                         ) : null}
-                        <h1 className="content-title">{page.title}</h1>
+                        <h1 className="content-title" style={{
+                            height: 1,
+                            width: 1,
+                            overflow: `hidden`,
+                        }}>
+                            {page.title}
+                        </h1>
 
                         {/* The main page content */}
                         <section
