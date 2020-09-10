@@ -21,9 +21,6 @@ const Index = ({ data, location, pageContext }) => {
             <MetaData location={location} />
             <Layout isHome={true}>
                 <div className="container">
-                    <section>
-                        Hola
-                    </section>
                     <section className="mus-post-feed">
                         {posts.map(({ node }) => (
                             <PostCard key={node.id} post={node} />

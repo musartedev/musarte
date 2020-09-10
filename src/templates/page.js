@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { graphql } from "gatsby"
-import Helmet from "react-helmet"
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Helmet from "react-helmet";
 
-import { Layout } from "../components/common"
-import { MetaData } from "../components/common/meta"
+import { Layout } from "../components/common";
+import { MetaData } from "../components/common/meta";
 
 /**
  * Single page (/:slug)
@@ -13,7 +13,7 @@ import { MetaData } from "../components/common/meta"
  *
  */
 const Page = ({ data, location }) => {
-    const page = data.ghostPage
+    const page = data.ghostPage;
 
     return (
         <>
@@ -32,13 +32,7 @@ const Page = ({ data, location }) => {
                                 />
                             </figure>
                         ) : null}
-                        <h1 className="content-title" style={{
-                            height: 1,
-                            width: 1,
-                            overflow: `hidden`,
-                        }}>
-                            {page.title}
-                        </h1>
+                        <h1 className="page-title">{page.title}</h1>
 
                         {/* The main page content */}
                         <section
@@ -49,8 +43,8 @@ const Page = ({ data, location }) => {
                 </div>
             </Layout>
         </>
-    )
-}
+    );
+};
 
 Page.propTypes = {
     data: PropTypes.shape({
@@ -62,9 +56,9 @@ Page.propTypes = {
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
-}
+};
 
-export default Page
+export default Page;
 
 export const postQuery = graphql`
     query($slug: String!) {
@@ -72,4 +66,4 @@ export const postQuery = graphql`
             ...GhostPageFields
         }
     }
-`
+`;

@@ -44,6 +44,7 @@ what's here to work the way you'd like it to.
     --color-primary: #5f147d;
 
     --color-base: #fff;
+    --color-base-opacity: #f9f9f9;
     --color-secondary: rgb(51, 126, 145);
     --color-pink: rgb(160, 111, 160);
     --color-border: #c7d5d8;
@@ -58,6 +59,7 @@ what's here to work the way you'd like it to.
     --color-primary: #ba46e8;
 
     --color-base: rgb(45, 45, 45);
+    --color-base-opacity: #383737;
     --color-secondary: rgb(135, 215, 252);
     --color-pink: rgb(172, 108, 172);
     --color-border: #c7d5d8;
@@ -567,9 +569,12 @@ h6 {
 }
 
 .content {
-    margin: 0 auto;
+    margin: 0 auto 20px;
     font-size: 2rem;
     line-height: 1.7em;
+    background: var(--color-base-opacity);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .content-body {
@@ -585,16 +590,23 @@ h6 {
     justify-content: center;
     align-items: center;
     font-size: 17px;
+    margin-bottom: 20px;
 }
 
 .post-full-content {
     max-width: 720px;
     margin: 0 auto;
-    background: var(--color-base);
+    padding: 10px;
+    background: var(--color-base-opacity);
+}
+
+.post-feature-image {
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
 }
 
 .post-feature-image img {
-    margin: 0 0 3vw;
+    margin: 0 0 1vw;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -617,6 +629,11 @@ h6 {
     color: var(--color-text-default);
     font-weight: bold;
 }
+
+.page-title {
+    text-align: center;
+}
+
 @media (max-width: 500px) {
     .content-title {
         margin: 0.8em 0;
