@@ -909,6 +909,23 @@ h6 {
     }
 }
 
+.post-card-container {
+    background-color: var(--color-base-opacity);
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+.post-card > *,
+.post-card-tags,
+h2.post-card-title {
+    padding: 0 10px;
+}
+
+.post-card-header {
+    padding: 0;
+}
+
 .post-card {
     color: inherit;
     text-decoration: none;
@@ -951,16 +968,15 @@ h6 {
     width: auto;
     height: 200px;
     background: no-repeat center center;
-    background-size: contain;
+    background-size: cover;
 }
 
 .post-card-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 0 20px 0;
+    margin-top: 10px;
     color: var(--color-secondary);
-    border-bottom: 1px solid var(--color-border);
     padding-bottom: 20px;
 }
 
