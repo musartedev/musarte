@@ -37,7 +37,7 @@ const Page = ({ data, location }) => {
                         {/* The main page content */}
                         <section
                             className="content-body load-external-scripts"
-                            dangerouslySetInnerHTML={{ __html: page.html }}
+                            dangerouslySetInnerHTML={{ __html: page.childHtmlRehype.html }}
                         />
                     </article>
                 </div>
@@ -52,6 +52,9 @@ Page.propTypes = {
             codeinjection_styles: PropTypes.object,
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
+            childHtmlRehype: PropTypes.shape({
+                html: PropTypes.string.isRequired,
+            }),
             feature_image: PropTypes.string,
         }).isRequired,
     }).isRequired,

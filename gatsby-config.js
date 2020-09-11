@@ -183,6 +183,20 @@ module.exports = {
                 addUncaughtPages: true,
             },
         },
+        {
+            resolve: `gatsby-transformer-rehype`,
+            options: {
+                // 2. - Ensure these only apply to type
+                filter: node => node.internal.type === `GhostPost` ||
+                    node.internal.type === `GhostPage`,
+                plugins: [
+                    {
+                        // 3. - Add syntax highlight for code block.
+                        resolve: `gatsby-rehype-prismjs`,
+                    },
+                ],
+            },
+        },
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,

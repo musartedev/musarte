@@ -9,6 +9,7 @@ import MusarteLogo from "./MusarteLogo"
 
 // Styles
 import "../../styles/app.css"
+import "../../styles/prism-theme.css"
 import "../../styles/icons.css"
 
 /**

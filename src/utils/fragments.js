@@ -72,6 +72,11 @@ export const ghostPostFields = graphql`
         twitter_image
         twitter_title
 
+        # Code highlighting
+        childHtmlRehype {
+            html
+        }
+
         # Authors
         authors {
             name
@@ -152,6 +157,11 @@ export const ghostPageFields = graphql`
         created_at
         published_at
         updated_at
+
+        # Code highlighting
+        childHtmlRehype {
+            html
+        }
 
         # SEO
         meta_title
