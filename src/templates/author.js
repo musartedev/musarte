@@ -19,11 +19,7 @@ const Author = ({ data, location }) => {
 
     return (
         <>
-            <MetaData
-                data={data}
-                location={location}
-                type="profile"
-            />
+            <MetaData data={data} location={location} type="profile" />
             <Layout>
                 <div className="container">
                     <header className="author-header">
@@ -32,29 +28,64 @@ const Author = ({ data, location }) => {
                             {author.bio && <p>{author.bio}</p>}
                         </div>
                         <div className="author-header-image">
-                            {author.profile_image && <img src={author.profile_image} alt={author.name} />}
+                            {author.profile_image && (
+                                <img
+                                    src={author.profile_image}
+                                    alt={author.name}
+                                />
+                            )}
                         </div>
-
                     </header>
                     <main className="author-info">
                         <section className="author-bio">
                             <div className="author-bio-content">
-                                ✨ Hola, puedes llamarme Mus 👓.
-                                Soy Lic. en Computación y desarrolladora Full Stack, enfocada en MERN 🤓.
-                                Estoy orgullosa de ser Platzi Master 💚 y parte del equipo de
-                                <a href={`http://burea.app`} target="_blank" rel="noopener noreferrer"> BUREA.app</a> 💜.
-                                Amo hacer (y comer) pancakes, el yoga no falta en mi vida y me gusta mucho bailar.
+                                ✨ Hola, puedes llamarme Mus. Soy Lic. en
+                                Computación y desarrolladora Full Stack,
+                                enfocada en MERN 🤓. También formo parte del
+                                {` `}
+                                <a
+                                    href={`http://platzi.com`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Platzi Team 💚
+                                </a>
+                                {` `} como Front End Developer. Amo hacer (y
+                                comer) pancakes 🥞, el yoga no falta en mi vida
+                                y me gusta mucho bailar.
                             </div>
                         </section>
                         <section className="author-social">
                             <div className="author-social-content">
                                 <p>
-                                    👩🏽‍💻 Te invito a que mantengamos contacto a través de mis redes sociales
+                                    👩🏽‍💻 Te invito a que mantengamos contacto a
+                                    través de mis redes sociales:
                                 </p>
                                 <div className="author-social-links">
-                                    <a href={twitterUrl} target="_blank" rel="noopener noreferrer"><span className="icon-twitter"/></a>
-                                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer"><span className="icon-instagram"/></a>
-                                    <a href={githubUrl} target="_blank" rel="noopener noreferrer"><span className="icon-github"/></a>
+                                    <a
+                                        href={twitterUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        title="Twitter"
+                                    >
+                                        <span className="icon-twitter" />
+                                    </a>
+                                    <a
+                                        href={instagramUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        title="Instagram"
+                                    >
+                                        <span className="icon-instagram" />
+                                    </a>
+                                    <a
+                                        href={githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        title="Github"
+                                    >
+                                        <span className="icon-github" />
+                                    </a>
                                 </div>
                             </div>
                         </section>
@@ -93,14 +124,14 @@ export const pageQuery = graphql`
             ...GhostAuthorFields
         }
         allGhostPost(
-            sort: { order: DESC, fields: [published_at] },
-            filter: {authors: {elemMatch: {slug: {eq: $slug}}}},
-            limit: $limit,
+            sort: { order: DESC, fields: [published_at] }
+            filter: { authors: { elemMatch: { slug: { eq: $slug } } } }
+            limit: $limit
             skip: $skip
         ) {
             edges {
                 node {
-                ...GhostPostFields
+                    ...GhostPostFields
                 }
             }
         }

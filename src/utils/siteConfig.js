@@ -2,9 +2,8 @@ module.exports = {
     siteUrl: `https://musarte.dev`, // Site domain. Do not include a trailing slash!
 
     postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
-
-    siteTitleMeta: `Musarte - Mariangélica Useche`, // This allows an alternative site title for meta data for pages.
-    siteDescriptionMeta: `You can call me Mus. I'm a Computer Scientist and Full Stack Developer, using MERN stack 🤓. Proud to be Platzi Master`, // This allows an alternative site description for meta data for pages.
+    siteTitleMeta: `@musartedev`,
+    siteDescriptionMeta: `Puedes llamarme Mus. Soy Lic. en Computación y desarrolladora Full Stack, enfocada en MERN 🤓. También formo parte del Platzi Team 💚 como Front End Developer.`, // This allows an alternative site description for meta data for pages.
 
     shareImageWidth: 1000, // Change to the width of your default share image
     shareImageHeight: 523, // Change to the height of your default share image
