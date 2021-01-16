@@ -729,6 +729,10 @@ h6 {
     background-size: cover;
 }
 
+.site-nav-item.active {
+    color: var(--color-secondary);
+}
+
 .site-nav-item {
     display: inline-block;
     padding: 5px 10px;
