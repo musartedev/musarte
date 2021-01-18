@@ -43,7 +43,7 @@
     "gatsby-plugin-manifest": "2.4.2",
     "gatsby-plugin-offline": "3.2.1",
     "gatsby-plugin-react-helmet": "3.3.1",
-    "gatsby-plugin-sharp": "^2.10.1",
+    "gatsby-plugin-sharp": "^2.12.2",
     "gatsby-rehype-prismjs": "^1.2.5",
     "gatsby-source-filesystem": "2.3.1",
     "gatsby-source-ghost": "4.0.4",
