@@ -39,7 +39,7 @@
   "dependencies": {
     "@tryghost/helpers": "1.1.27",
     "@tryghost/helpers-gatsby": "1.0.31",
-    "cheerio": "1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc.10",
     "disqus-react": "^1.0.8",
     "gatsby": "2.21.19",
     "gatsby-awesome-pagination": "0.3.5",
@@ -55,9 +55,9 @@
     "gatsby-plugin-react-helmet": "3.3.1",
     "gatsby-plugin-sharp": "2.6.2",
     "gatsby-source-filesystem": "2.3.1",
-    "gatsby-source-ghost": "4.0.4",
+    "gatsby-source-ghost": "^4.2.4",
     "gatsby-transformer-sharp": "2.5.2",
-    "lodash": "4.17.15",
+    "lodash": "^4.17.21",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "5.2.1"
