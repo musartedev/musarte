@@ -184,5 +184,12 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
+        {
+            resolve: `gatsby-plugin-google-tagmanager`,
+            options: {
+                id: process.env.GTM_ID,
+                defaultDataLayer: { platform: `gatsby` },
+            },
+        },
     ],
 }
