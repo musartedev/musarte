@@ -59,7 +59,12 @@ module.exports = {
                 name: `images`,
             },
         },
-        `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                icon: `src/images/musarteicon.png`,
+            },
+        },
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-source-ghost`,
