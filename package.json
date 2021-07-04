@@ -40,7 +40,7 @@
     "gatsby-plugin-catch-links": "2.3.1",
     "gatsby-plugin-feed": "2.5.1",
     "gatsby-plugin-force-trailing-slashes": "1.0.4",
-    "gatsby-plugin-manifest": "2.4.2",
+    "gatsby-plugin-manifest": "^3.8.0",
     "gatsby-plugin-offline": "3.2.1",
     "gatsby-plugin-react-helmet": "3.3.1",
     "gatsby-plugin-sharp": "^2.12.2",
