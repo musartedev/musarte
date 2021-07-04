@@ -1,15 +1,15 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { Link, StaticQuery, graphql } from "gatsby"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 import { Navigation } from "."
 import config from "../../utils/siteConfig"
-import MusarteLogo from './MusarteLogo'
+import MusarteLogo from "./MusarteLogo"
 
 // Styles
 import "../../styles/app.css"
+import "../../styles/prism-theme.css"
 import "../../styles/icons.css"
 
 /**
@@ -21,12 +21,26 @@ import "../../styles/icons.css"
  *
  */
 const DefaultLayout = ({ data, children }) => {
+    let websiteTheme
+    if (typeof window !== `undefined`) {
+        websiteTheme = window.__theme
+    }
+
+    const [theme, setTheme] = useState(websiteTheme)
+
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
         : null
     const instagramUrl = `https://www.instagram.com/musarte.dev`
-    const githubUrl = `https://github.com/musenberg404`
+    const githubUrl = `https://github.com/musartedev`
+
+    useEffect(() => {
+        setTheme(window.__theme)
+        window.__onThemeChange = () => {
+            setTheme(window.__theme)
+        }
+    }, [])
 
     return (
         <>
@@ -44,7 +58,10 @@ const DefaultLayout = ({ data, children }) => {
                             <div className="site-mast">
                                 <div className="site-mast-left">
                                     <Link to="/">
-                                        <MusarteLogo className={`site-logo`} width={100} />
+                                        <MusarteLogo
+                                            className={`site-logo`}
+                                            width={100}
+                                        />
                                     </Link>
                                 </div>
                                 <div className="site-mast-right">
@@ -84,38 +101,27 @@ const DefaultLayout = ({ data, children }) => {
                                             <span className="site-nav-icon icon-github" />
                                         </a>
                                     </div>
-                                    <ThemeToggler>
-                                        {({ theme, toggleTheme }) => {
-                                            return (
-                                                <div className="dark-mode">
-                                                    <input
-                                                        type="checkbox"
-                                                        className="checkbox"
-                                                        id="checkbox"
-                                                        onChange={e => toggleTheme(
-                                                            e.target.checked
-                                                                ? `light`
-                                                                : `dark`
-                                                        )
-                                                        }
-                                                        checked={theme === `light`}
-                                                    >
-                                                    </input>
-                                                    <label
-                                                        className="switch"
-                                                        htmlFor="checkbox"
-                                                    >
-                                                        {theme !== `dark` ?
-                                                            <span className="dark-mode-icon">🌜</span> :
-                                                            <span className="light-mode-icon">☀️</span>
-                                                        }
-                                                    </label>
-                                                </div>
-                                            )
-                                        }}
-                                    </ThemeToggler>
+                                    <div className="dark-mode">
+                                        <input
+                                            type="checkbox"
+                                            className="checkbox"
+                                            id="checkbox"
+                                            onChange={() => {
+                                                window.__setPreferredTheme(
+                                                    theme === `dark`
+                                                        ? `light`
+                                                        : `dark`
+                                                )
+                                            }}
+                                            checked={theme === `light`}
+                                        ></input>
+                                        <label
+                                            className="switch"
+                                            htmlFor="checkbox"
+                                        >
+                                        </label>
+                                    </div>
                                 </div>
-
                             </div>
                             <nav className="site-nav">
                                 <div className="site-nav-left">
@@ -144,8 +150,8 @@ const DefaultLayout = ({ data, children }) => {
                                     rel="noopener noreferrer"
                                 >
                                     Mariangélica Useche
-                                </a>{` `}
-                                © 2020
+                                </a>
+                                {` `}© 2020
                             </div>
                             <div className="site-foot-nav-right">
                                 <Navigation
@@ -179,13 +185,6 @@ const DefaultLayoutSettingsQuery = props => (
                     edges {
                         node {
                             ...GhostSettingsFields
-                        }
-                    }
-                }
-                file(relativePath: { eq: "ghost-icon.png" }) {
-                    childImageSharp {
-                        fixed(width: 30, height: 30) {
-                            ...GatsbyImageSharpFixed
                         }
                     }
                 }

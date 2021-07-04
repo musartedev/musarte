@@ -10,6 +10,7 @@ var _common = require("./common.js");
 
 exports.onRenderBody = function (_ref, pluginOptions) {
   var setHeadComponents = _ref.setHeadComponents;
+  const setPreBodyComponents = _ref.setPreBodyComponents;
   // We use this to build a final array to pass as the argument to setHeadComponents at the end of onRenderBody.
   var headComponents = [];
   var icons = pluginOptions.icons || _common.defaultIcons; // If icons were generated, also add a favicon link.
@@ -58,4 +59,40 @@ exports.onRenderBody = function (_ref, pluginOptions) {
   }
 
   setHeadComponents(headComponents);
+  setPreBodyComponents([
+    _react.default.createElement("script", {
+          dangerouslySetInnerHTML: {
+              __html: `
+                (() => {
+                  window.__onThemeChange = function() {};
+                  function setTheme(newTheme) {
+                    window.__theme = newTheme;
+                    preferredTheme = newTheme;
+                    document.body.className = newTheme;
+                    window.__onThemeChange(newTheme);
+                  }
+
+                  let preferredTheme
+                  try {
+                    preferredTheme = localStorage.getItem('theme')
+                  } catch (err) {}
+
+                  window.__setPreferredTheme = newTheme => {
+                    setTheme(newTheme)
+                    try {
+                      localStorage.setItem('theme', newTheme)
+                    } catch (err) {}
+                  }
+
+                  let darkQuery = window.matchMedia('(prefers-color-scheme: light)')
+                  darkQuery.addListener(e => {
+                    window.__setPreferredTheme(e.matches ? 'light' : 'dark')
+                  })
+
+                  setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'))
+                })()
+          `,
+          },
+      }),
+  ]);
 };

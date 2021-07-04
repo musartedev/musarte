@@ -9,7 +9,7 @@ import { MetaData } from '../components/common/meta'
 
 const Post = ({ data, location }) => {
     let post = data.ghostPost
-    post.html = post.html.replace(/<a/g, `<a target="_blank" rel="noopener noreferrer"`)
+    post.childHtmlRehype.html = post.childHtmlRehype.html.replace(/<a/g, `<a target="_blank" rel="noopener noreferrer"`)
 
     return (
         <>
@@ -34,7 +34,7 @@ const Post = ({ data, location }) => {
                             {/* The main post content */ }
                             <section
                                 className="content-body load-external-scripts"
-                                dangerouslySetInnerHTML={{ __html: post.html }}
+                                dangerouslySetInnerHTML={{ __html: post.childHtmlRehype.html }}
                             />
                             <div className="content-footer">
                                 <div className="content-footer-date">
@@ -65,6 +65,9 @@ Post.propTypes = {
             codeinjection_styles: PropTypes.object,
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
+            childHtmlRehype: PropTypes.shape({
+                html: PropTypes.string.isRequired,
+            }),
             feature_image: PropTypes.string,
             created_at_pretty: PropTypes.string.isRequired,
             url: PropTypes.string.isRequired,
