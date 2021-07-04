@@ -197,6 +197,24 @@ module.exports = {
                 ],
             },
         },
+        {
+            resolve: `gatsby-plugin-google-tagmanager`,
+            options: {
+                id: `GTM-KZZ8WTW`,
+                includeInDevelopment: false,
+                defaultDataLayer: { platform: `gatsby` },
+            },
+        },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: `UA-177257759-1`,
+                head: true,
+                respectDNT: true,
+                pageTransitionDelay: 0,
+                defer: false,
+            },
+        },
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
